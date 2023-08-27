@@ -20,8 +20,8 @@ export const TodoHeader = () => {
       return;
     }
 
-    dispatch(addTask(todo));
-    setTodo("");
+    dispatch(addTask(todo)); // Dispatches the action to add a task
+    setTodo(""); // Clears the todo input
   };
 
   return (

@@ -4,14 +4,15 @@ export const taskSlice = createSlice({
   name: "tasks",
   initialState: [],
   reducers: {
-    addTask(state = initialState, action) {
+    addTask: (state, action) => {
+      console.log("======", action.payload);
       const newTask = {
         name: action.payload,
       };
-      state.push(newTask);
+
+      return [...state, newTask]; // Use the spread operator to create a new array
     },
-    deleteTask(state, action) {
-      console.log(action.payload.name);
+    deleteTask: (state, action) => {
       return state.filter((item) => item.name !== action.payload.name);
     },
   },

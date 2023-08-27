@@ -12,9 +12,11 @@ import { useDispatch } from "react-redux";
 import { deleteTask } from "../redux/taskSlice";
 
 const TodoList = () => {
-  const todos = useSelector((state) => state.tasks);
+  const todos = useSelector((state) => {
+    return state.tasks;
+  });
   const dispatch = useDispatch();
-
+  console.log(todos);
   const deleteITem = (item) => {
     dispatch(deleteTask({ name: item.name }));
   };
